@@ -1,0 +1,16 @@
+# Optional: run MySQL locally with `docker compose up -d`
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: creatorx
+      MYSQL_USER: creatorx
+      MYSQL_PASSWORD: creatorx
+      MYSQL_ROOT_PASSWORD: rootpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - creatorx_mysql:/var/lib/mysql
+volumes:
+  creatorx_mysql:
